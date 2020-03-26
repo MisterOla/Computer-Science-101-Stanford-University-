@@ -31,3 +31,156 @@ image.setSize(width, height);
 #Scale an image up or down in size, keeping its proportions, so it is at least as big as the other_image specified. Useful for bluescreen code where we want to make the background at least as big as the foreground.
 image.setSameSize(other_image);
 
+Grayscale image(red,green,blue equal): avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue())/3;
+
+
+#image bluescreen:
+image = new SimpleImage("stop.jpg");
+back = new SimpleImage("leaves.jpg");
+
+for (pixel: image) {
+  avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue())/3;
+  if (pixel.getRed() > avg * 1.5) {
+    x = pixel.getX();
+    y = pixel.getY();
+    pixel2 = back.getPixel(x, y);
+    pixel.setRed(pixel2.getRed());
+    pixel.setGreen(pixel2.getGreen());
+    pixel.setBlue(pixel2.getBlue());
+  }
+}
+print(image);
+
+
+#Many Boolean
+table = new SimpleTable("baby-2010.csv");
+for (row: table) {
+  if (row.getField("name").startsWith("A") &&
+      row.getField("rank") <= 50) {
+    print(row);
+  }
+}
+
+
+#Table counting
+table = new SimpleTable("baby-2010.csv");
+count = 0;
+for (row: table) {
+    if (row.getField("name").startsWith("T") &&
+        row.getField("gender")=='girl') {
+        print(row);
+        count = count + 1;  // increases the value in count by 1
+  }
+}
+print("count:", count);
+
+
+#Multiple tab;e count
+
+table = new SimpleTable("baby-2010.csv");
+
+count1 = 0;  // boy counter
+count2 = 0;  // girl counter
+for (row: table) {
+
+  if (row.getField("name").endsWith("y") &&
+      row.getField("gender") == "boy") {
+    count1 = count1 + 1;
+  }
+
+  if (row.getField("name").endsWith("y") &&
+      row.getField("gender") == "girl") {
+    count2 = count2 + 1;
+  }
+
+}
+print("boy count:", count1);
+print("girl count:", count2);
+
+
+
+#Multiple table count 2
+table = new SimpleTable("baby-2010.csv");
+
+count1 = 0;
+count2 = 0;
+count3 = 0;
+for (row: table) {
+
+  if (row.getField("name").endsWith("a")) {
+    count1 = count1 + 1;
+  }
+
+  if (row.getField("name").endsWith("i")) {
+    count2 = count2 + 1;
+  }
+  
+  if (row.getField("name").endsWith("o")) {
+    count3 = count3 + 1;
+  }
+
+}
+print("a count:", count1);
+print("i count:", count2);
+print("o count:", count3);
+
+
+#Convert table to lower case: table.convertToLowerCase();
+
+
+
+
+image = new SimpleImage("x.png");
+image.setZoom(20);
+
+pixel = image.getPixel(0, 0);
+pixel.setRed(255);
+
+print(image);
+image = new SimpleImage("x.png");
+image.setZoom(20);
+
+pixel = image.getPixel(0, 0);
+pixel.setRed(255);
+
+print(image);
+
+image = new SimpleImage("x.png");
+image.setZoom(20);
+print(image);
+
+
+image = new SimpleImage("flowers.jpg");
+
+for (pixel: image) {
+  pixel.setRed(0);
+  pixel.setGreen(0);
+  pixel.setBlue(0);
+}
+
+print(image);
+
+
+image = new SimpleImage("51020-poppy.png");
+
+for (pixel: image) {
+ pixel.setRed(pixel.getRed() * 10);
+  pixel.setGreen(pixel.getGreen() * 5);
+  pixel.setBlue(pixel.getBlue() * 20);
+  
+}
+
+print(image);
+
+
+image = new SimpleImage("flowers.jpg");
+
+for (pixel: image) {
+  if (pixel.getRed() > 160) {
+    pixel.setRed(0);
+    pixel.setGreen(0);
+    pixel.setBlue(0);
+  }
+}
+
+print(image);
