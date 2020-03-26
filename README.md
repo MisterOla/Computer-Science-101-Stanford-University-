@@ -1,4 +1,5 @@
 # Computer-Science-101-Stanford-University-
+Instructor: Nick Parlante
 
 CS101 Syllabus and How-to
 This page explains the structure of CS101 and how to go through it. CS101 teaches the essential features of computers with some neat image and code exercises. CS101 is geared for people with zero prior computer experience apart from using a browser.
