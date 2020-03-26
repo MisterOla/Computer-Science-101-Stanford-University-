@@ -1,0 +1,33 @@
+
+pixel.setRed(number);
+
+#Set the variable image to hold the "flowers.jpg" image
+image = new SimpleImage("flowers.jpg");
+
+#Set the image to print at 5x size on screen. Useful to make changes on very small images such as "x.png" visible.
+image.setZoom(5);
+
+#Print the image to the screen.
+print(image);
+
+#Retrieve the pixel at x,y (0, 0) and store it in a variable named pixel (i.e. the upper left pixel). Changes on that pixel, e.g.pixel.setRed(255);, change the pixel in the original image.#
+pixel = image.getPixel(0, 0);
+
+#rint the values for one pixel, in the format "r:200 g:12 b:166"
+print(pixel);
+
+#Change the pixel's red value to be 255 (we can specify any value 0..255 within the parenthesis). There are analogous functionspixel.setGreen(number);andpixel.setBlue(number);for the other two colors. If the number is outside the range 0..255, it is automatically limited to 0 or 255.
+pixel.setRed(number);
+
+#Retrieve the red value from a pixel (a number in the range 0..255), and store it in a variable named red. There are analogous functionspixel.getGreen()andpixel.getBlue()
+red = pixel.getRed();
+
+#Retrieve the width and height of an image.
+image.getWidth(),image.getHeight()
+
+#Scale an image up or down in size so it has the given width and height.
+image.setSize(width, height);
+
+#Scale an image up or down in size, keeping its proportions, so it is at least as big as the other_image specified. Useful for bluescreen code where we want to make the background at least as big as the foreground.
+image.setSameSize(other_image);
+
