@@ -1,0 +1,11 @@
+RGB Explorer keys
+
+All at max (255) → white
+All at min (0) → black
+red + green → yellow
+red + blue → purple
+green + blue → turquoise
+Dark yellow -- make yellow, then reduce both red and green
+Orange -- make yellow, but more red, less green
+Light, pastel green -- make pure green, then turn up both red and blue some equally (going towards white)
+Light gray -- make white, then turn all three down a bit equally
